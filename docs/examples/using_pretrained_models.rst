@@ -17,7 +17,7 @@ The below example shows how to use the pretrained models.
     images = [
         keras_ocr.tools.read(url) for url in [
             'https://upload.wikimedia.org/wikipedia/commons/b/bd/Army_Reserves_Recruitment_Banner_MOD_45156284.jpg',
-            'https://upload.wikimedia.org/wikipedia/commons/e/e8/FseeG2QeLXo.jpg',
+            #'https://upload.wikimedia.org/wikipedia/commons/e/e8/FseeG2QeLXo.jpg',   This link is no longer working
             'https://upload.wikimedia.org/wikipedia/commons/b/b4/EUBanana-500x112.jpg'
         ]
     ]
@@ -30,6 +30,7 @@ The below example shows how to use the pretrained models.
     fig, axs = plt.subplots(nrows=len(images), figsize=(20, 20))
     for ax, image, predictions in zip(axs, images, prediction_groups):
         keras_ocr.tools.drawAnnotations(image=image, predictions=predictions, ax=ax)
+    plt.show() #need to add this line to display the final output
 
 .. image:: ../_static/readme_labeled.jpg
    :width: 768
